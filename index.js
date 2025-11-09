@@ -13,7 +13,6 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-
 app.use("/api", chatRouter);
 
 app.listen(PORT, () => {

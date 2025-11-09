@@ -1,6 +1,7 @@
 import { HumanMessage } from "@langchain/core/messages";
 import { RecursiveCharacterTextSplitter } from "@langchain/textsplitters";
 import fs from "fs";
+import { llm } from "../services/llm.js";
 
 //load seed data
 const rawData = fs.readFileSync(
@@ -38,6 +39,6 @@ Instructions:
   `;
 
   const response = await llm.invoke([new HumanMessage(prompt)]);
-  
+
   return response.content;
 }

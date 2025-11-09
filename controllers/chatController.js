@@ -1,3 +1,5 @@
+import { handleHealthQuery } from "../agent/healthAgent.js";
+
 export const chatController = async (req, res) => {
 
   const { message } = req.body;
@@ -8,5 +10,5 @@ export const chatController = async (req, res) => {
 
   const answer = await handleHealthQuery(message);
 
-  return res.status(200).json({reply: answer});
+  return res.status(200).json({resposta: answer});
 };
